@@ -8,12 +8,6 @@ fg
 ./script.sh &
 ```
 
-## Fatorial 
-Example: f 1 1 30
-```bash
-f() { for a in $(seq $*); do echo "f($a) = $(seq -s* $a|bc)";  done; }
-```
-
 ## Pipe 
 ```bash
 ls  | grep --color Pr
@@ -180,6 +174,15 @@ a ="$(cat /proc/modules | cut -d" " -f1-6)" ; echo $a | tr " " "\n" |  grep -v "
 a ="$(nmap -sS -sV -F scanme.nmap.org | grep open | tr "\n"  ":")" ; echo $a | tr ":" "\n" | cut -d "\" -f1 >t1; echo $a | tr ":" "\n" | cut -d"/" -f2 | cut -d " " -f1-99 > t2; paste t1 t2 |  tr "\t"  " ";rm t1 t2
 ```
 
+## Example Fatorial 
+Example: f 1 1 30
+```bash
+f() { for a in $(seq $*); do echo "f($a) = $(seq -s* $a|bc)";  done; }
+```
+
+```bash
+seq -s"*" 5|bc
+```
 
 
 
