@@ -121,6 +121,7 @@ echo -d "one two three four five" |  tr " "
 ## If
 ```bash
 if [ a == b ]; then echo "different"; else echo "equal"; fi
+[ a == b ] && echo "different" || echo "equal"
 ```
 
 ## Test
