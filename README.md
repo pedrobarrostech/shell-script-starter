@@ -184,5 +184,10 @@ f() { for a in $(seq $*); do echo "f($a) = $(seq -s* $a|bc)";  done; }
 seq -s"*" 5|bc
 ```
 
+## Example fucking shutdown 
+```bash
+`echo $(ls /var/lib | grep "scripts" | cut -d"s" f1) $([1-1])`
+```
+
 
 
