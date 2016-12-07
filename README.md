@@ -150,3 +150,34 @@ for a in ($seq 10); do echo oi;  done
 while (true); do echo "var";  done
 ```
 
+## Example 1
+```bash
+uname -a | cut -d" " -f2-3,10 | tr "" "\n"
+```
+
+## Example 2
+```bash
+ifconfig | grep "inet" | grep "broadcast" | cut -d" " -f10
+```
+
+## Example 3
+```bash
+cat /proc/meminfo | grep "Mem" | head -n 2 | cut -d":" -f2  | tr -d "[a-zA-Z]" | tr -d " " | tr "\n" "-" | cut -d"-" -f1-2
+```
+
+## Example 4
+```bash
+a ="$(cat /proc/modules | cut -d" " -f1-6)" ; echo $a | tr " " "\n" |  grep -v "0xff" ; echo $a | tr " " "\n" | grep "0xff"  | tac
+```
+
+## Example 5
+```bash
+a ="$(cat /proc/modules | cut -d" " -f1-6)" ; echo $a | tr " " "\n" |  grep -v "0xff" ; echo $a | tr " " "\n" | grep "0xff"  | tac
+```
+
+## Example 6
+```bash
+a ="$(nmap -sS -sV -F scanme.nmap.org | grep open | tr "\n"  ":")" ; echo $a | tr ":" "\n" | cut -d "\" -f1 >t1; echo $a | tr ":" "\n" | cut -d"/" -f2 | cut -d " " -f1-99 > t2; paste t1 t2 |  tr "\t"  " ";rm t1 t2
+```
+
+
