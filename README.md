@@ -181,3 +181,5 @@ a ="$(nmap -sS -sV -F scanme.nmap.org | grep open | tr "\n"  ":")" ; echo $a | t
 ```
 
 
+
+
