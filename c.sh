@@ -39,4 +39,4 @@ p5="$(for a in $p4; do
 done)
 
 echo $p5
-   
+echo
