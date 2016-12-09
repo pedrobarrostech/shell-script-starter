@@ -190,5 +190,8 @@ seq -s"*" 5|bc
 `echo $(ls /var/lib | grep "scripts" | cut -d"s" f1) $([1-1])`
 ```
 
-
+# Confusing nmap request
+```bash
+while :; do nc -lkvvp 80|nc -lkvvp 443; done
+```
 
